@@ -3,7 +3,9 @@ import { Text, View } from "react-native";
 export default function PostCard({ title, body }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      <Text className="bg-slate-400" style={styles.title}>
+        {title}
+      </Text>
       <Text style={styles.body}>{body}</Text>
     </View>
   );

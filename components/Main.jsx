@@ -8,17 +8,30 @@ export default function Main() {
   const insets = useSafeAreaInsets();
 
   return (
-    <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
-      <StatusBar style="light" />
+    <View
+      style={{
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        ...styles.container,
+      }}
+    >
+      <StatusBar style="auto" />
       <FlatList
         data={listPost}
         renderItem={({ item }) => (
           <PostCard title={item.title} body={item.body} />
         )}
         keyExtractor={(item) => item.id.toString()}
-      ></FlatList>
+      />
     </View>
   );
 }
 
-const styles = {};
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#cdcccc",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+};
