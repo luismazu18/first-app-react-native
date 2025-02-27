@@ -1,10 +1,18 @@
 import "./global.css";
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from "@react-navigation/native";
 import Navigation from "./navigation/Navigation";
+import { useColorScheme } from "react-native";
 
 export default function App() {
+  const currentScheme = useColorScheme();
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      theme={currentScheme === "dark" ? DarkTheme : DefaultTheme}
+    >
       <Navigation />
     </NavigationContainer>
   );

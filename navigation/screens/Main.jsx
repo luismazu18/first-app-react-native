@@ -29,7 +29,6 @@ export default function Main() {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: "#cdcccc",
     alignItems: "center",
     justifyContent: "center",
   },

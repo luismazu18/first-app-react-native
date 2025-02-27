@@ -1,20 +1,34 @@
 import { useNavigation } from "@react-navigation/native";
-import { Pressable, Text, View } from "react-native";
+import { Pressable, Text, useColorScheme, View } from "react-native";
 
 export default function PostCard({ dataPost }) {
   const { navigate } = useNavigation();
 
+  const theme = useColorScheme();
   return (
     <Pressable
       onPress={() => {
         navigate("PostDetailsScreen", { dataPost });
       }}
     >
-      <View style={styles.container}>
-        <Text className="bg-slate-400" style={styles.title}>
+      <View
+        style={[
+          styles.container,
+          { color: theme === "dark" ? "#FFF" : "#000" },
+          { backgroundColor: theme === "dark" ? "#333" : "#FFF" },
+        ]}
+        numberOfLines={1}
+      >
+        <Text
+          style={[styles.title, { color: theme === "dark" ? "#FFF" : "#000" }]}
+        >
           {dataPost?.title}
         </Text>
-        <Text style={styles.body}>{dataPost?.body}</Text>
+        <Text
+          style={[styles.body, { color: theme === "dark" ? "#FFF" : "#000" }]}
+        >
+          {dataPost?.body}
+        </Text>
       </View>
     </Pressable>
   );
@@ -22,9 +36,8 @@ export default function PostCard({ dataPost }) {
 
 const styles = {
   container: {
-    backgroundColor: "#fff",
-    padding: 20,
-    margin: 10,
+    padding: 10,
+    margin: 8,
     borderRadius: 10,
   },
   title: {
