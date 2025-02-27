@@ -1,8 +1,9 @@
 import { StatusBar } from "expo-status-bar";
 import { FlatList, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import PostCard from "./PostCard";
-import { listPost } from "../constants";
+
+import { listPost } from "../../constants";
+import { PostCard } from "../../components";
 
 export default function Main() {
   const insets = useSafeAreaInsets();
@@ -18,9 +19,7 @@ export default function Main() {
       <StatusBar style="auto" />
       <FlatList
         data={listPost}
-        renderItem={({ item }) => (
-          <PostCard title={item.title} body={item.body} />
-        )}
+        renderItem={({ item }) => <PostCard dataPost={item} />}
         keyExtractor={(item) => item.id.toString()}
       />
     </View>
