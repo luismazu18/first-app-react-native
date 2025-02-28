@@ -1,7 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { FlatList, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-
 import { listPost } from "../../constants";
 import { PostCard } from "../../components";
 

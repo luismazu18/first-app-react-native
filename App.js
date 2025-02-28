@@ -4,7 +4,7 @@ import {
   DefaultTheme,
   NavigationContainer,
 } from "@react-navigation/native";
-import Navigation from "./navigation/Navigation";
+import Navigation from "./src/navigation/Navigation";
 import { useColorScheme } from "react-native";
 
 export default function App() {
